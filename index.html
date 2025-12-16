@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jogo dos Bairros — Cascavel</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left">
+      <h1>Jogo dos Bairros — Cascavel (PR)</h1>
+      <div class="sub">Arraste o nome do bairro e solte dentro do bairro correto no mapa.</div>
+      <div class="sub2">
+        Camadas: ruas de referência (Av. Brasil e Av. Pres. Tancredo Neves) e opção de satélite.
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><strong>Acertos:</strong> <span id="hits">0</span></div>
+      <div><strong>Tentativas:</strong> <span id="tries">0</span></div>
+      <div><strong>Restantes:</strong> <span id="remaining">0</span></div>
+      <button id="finishBtn" class="btn">Finalizar</button>
+      <button id="resetBtn" class="btn btn-secondary">Reiniciar</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Bairros</h2>
+      <div class="hint">Dica: arraste uma “caixa” e solte sobre a área do bairro correspondente.</div>
+      <div class="controls">
+        <label><input type="checkbox" id="toggleLabels" checked /> Mostrar nomes no mapa</label>
+      </div>
+      <div id="cards" class="cards"></div>
+    </aside>
+
+    <section class="mapWrap">
+      <div id="map"></div>
+      <div id="toast" class="toast" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
